@@ -8,17 +8,12 @@ from Utils.assertclass import AssertionBy
 
 @pytest.fixture(scope="session", autouse=True)
 def url():
-    url = "<insert_url>"
+    url = "file:///C:/Users/Mostafa_Ashraf/Downloads/SkyView-Updated/SkyView-NewVersion/newProject.html"
     return url
 
 
-@pytest.fixture(scope="session", autouse=True)
-def host(pytestconfig):
-    return pytestconfig.getoption("host")
-
-
 @pytest.fixture(scope="session")
-def firefox_driver(host):
+def firefox_driver():
     remote_host = "http://127.0.0.1:4444"
     firefox_capabilities = DesiredCapabilities.FIREFOX
     firefox_options = Options()
@@ -43,6 +38,6 @@ def assertion():
 
 @pytest.fixture(scope="session")
 def first_page():
-    page_one = Page1()
+    page_one = Page1(url, firefox_driver)
     yield page_one
     del page_one

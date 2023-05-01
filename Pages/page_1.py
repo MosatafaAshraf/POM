@@ -8,7 +8,7 @@ class Page1(CoreFunctions):
 
     def locators(self, element_name):
         page1 = {
-            "customer_pic"": (By.XPATH, "<Element_XPath>")
+            "customer_pic": (By.__class__, "//div[@class='w-100']")
         }
         return page1[element_name]
 

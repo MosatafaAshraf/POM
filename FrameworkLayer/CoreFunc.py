@@ -8,15 +8,13 @@ class CoreFunctions:
         self.driver = driver
 
     def navigate(self, clickable_element):
-        button = self.locators(clickable_element)
         wait = 30
-        element = WebDriverWait(self.browser, timeout=wait, poll_frequency=1).until(
-            EC.visibility_of_element_located(button))
+        element = WebDriverWait(self.driver, timeout=wait, poll_frequency=1).until(
+            EC.visibility_of_element_located(clickable_element))
         element.click()
 
     def get_css_properties(self, element, wait=30):
-        element = WebDriverWait(self.browser, timeout=wait, poll_frequency=1).until(
-            EC.visibility_of_element_located(element))
+        element = WebDriverWait(self.driver, timeout=5, poll_frequency=1).until(EC.visibility_of_element_located(element))
         css_dict = {
             "element-size": element.size
         }
