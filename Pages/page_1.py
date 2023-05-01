@@ -8,7 +8,7 @@ class Page1(CoreFunctions):
 
     def locators(self, element_name):
         page1 = {
-            "element_name": (By.XPATH, "<Element_XPath>"),
+            "customer_pic"": (By.XPATH, "<Element_XPath>")
         }
         return page1[element_name]
 
