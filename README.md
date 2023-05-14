@@ -1,2 +1,2 @@
 # POM
-Testing CSS properties of multiple pages
+Testing CSS properties of multiple pages with Selenium WedDriver
